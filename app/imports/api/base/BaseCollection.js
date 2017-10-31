@@ -12,7 +12,6 @@ import { _ } from 'meteor/underscore';
  * classes that inherit from this one.
  */
 class BaseCollection {
-
   /**
    * Superclass constructor for all RadGrad entities.
    * Defines internal fields needed by all entities: _type, _collectionName, _collection, and _schema.
@@ -72,10 +71,10 @@ class BaseCollection {
    */
   findDoc(name) {
     const doc = (
-            this._collection.findOne(name) ||
-            this._collection.findOne({ name }) ||
-            this._collection.findOne({ username: name }) ||
-            this._collection.findOne({ _id: name }));
+      this._collection.findOne(name) ||
+      this._collection.findOne({ name }) ||
+      this._collection.findOne({ username: name }) ||
+      this._collection.findOne({ _id: name }));
     if (!doc) {
       throw new Meteor.Error(`${name} is not a defined ${this._type}`);
     }
@@ -122,10 +121,10 @@ class BaseCollection {
    */
   isDefined(name) {
     return (
-    !!this._collection.findOne(name) ||
-    !!this._collection.findOne({ name }) ||
-    !!this._collection.findOne({ username: name }) ||
-    !!this._collection.findOne({ _id: name }));
+      !!this._collection.findOne(name) ||
+      !!this._collection.findOne({ name }) ||
+      !!this._collection.findOne({ username: name }) ||
+      !!this._collection.findOne({ _id: name }));
   }
 
   /**

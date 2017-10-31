@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "babel-runtime": "^6.26.0",
+    "lint": "^1.1.2",
     "meteor-node-stubs": "~0.2.0",
     "simpl-schema": "^0.3.2"
   },
